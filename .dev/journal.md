@@ -8,3 +8,4 @@ Chronological log of work activity.
 - 2025-11-20 15:37 — add MANIFEST.in
 - 2025-11-20 16:16 — chore: add .gitignore
 - 2025-11-20 18:37 — draft: core module layout
+- 2025-11-21 09:15 — set up tox config
