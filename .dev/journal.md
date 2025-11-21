@@ -12,3 +12,4 @@ Chronological log of work activity.
 - 2025-11-21 09:43 — add __init__.py
 - 2025-11-21 12:20 — chore: add .gitignore
 - 2025-11-21 16:20 — ci: add github actions workflow
+- 2025-11-21 18:14 — chore: add LICENSE (Apache-2.0)
