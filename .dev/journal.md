@@ -15,3 +15,4 @@ Chronological log of work activity.
 - 2025-11-21 18:14 — chore: add LICENSE (Apache-2.0)
 - 2025-11-21 18:25 — scaffold package structure
 - 2025-11-22 09:04 — set up ruff + black
+- 2025-11-22 10:36 — chore: add CODEOWNERS
