@@ -18,3 +18,4 @@ Chronological log of work activity.
 - 2025-11-22 10:36 — chore: add CODEOWNERS
 - 2025-11-22 16:01 — initial commit
 - 2025-11-22 17:59 — chore: add pyproject.toml
+- 2025-11-23 13:15 — set up ruff + black
