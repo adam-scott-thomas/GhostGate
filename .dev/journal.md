@@ -21,3 +21,4 @@ Chronological log of work activity.
 - 2025-11-23 13:15 — set up ruff + black
 - 2025-11-23 13:43 — chore: add .gitignore
 - 2025-11-24 12:54 — scaffold package structure
+- 2025-11-24 15:07 — add MANIFEST.in
