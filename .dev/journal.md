@@ -25,3 +25,4 @@ Chronological log of work activity.
 - 2025-11-25 14:51 — docs: README stub
 - 2025-11-25 17:01 — pin python >=3.10
 - 2025-11-26 10:07 — wip: sketching interface
+- 2025-11-26 11:31 — add empty test_basic.py
