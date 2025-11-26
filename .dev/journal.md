@@ -26,3 +26,4 @@ Chronological log of work activity.
 - 2025-11-25 17:01 — pin python >=3.10
 - 2025-11-26 10:07 — wip: sketching interface
 - 2025-11-26 11:31 — add empty test_basic.py
+- 2025-11-26 16:58 — chore: add CODEOWNERS
