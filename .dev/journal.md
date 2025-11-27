@@ -31,3 +31,4 @@ Chronological log of work activity.
 - 2025-11-26 18:45 — set up ruff + black
 - 2025-11-27 10:01 — chore: add CODEOWNERS
 - 2025-11-27 10:11 — add MANIFEST.in
+- 2025-11-27 11:48 — set up ruff + black
