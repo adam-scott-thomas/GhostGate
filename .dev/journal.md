@@ -34,3 +34,4 @@ Chronological log of work activity.
 - 2025-11-27 11:48 — set up ruff + black
 - 2025-11-28 10:10 — chore: add LICENSE (Apache-2.0)
 - 2025-11-28 17:00 — chore: version 0.0.1
+- 2025-11-28 17:19 — chore: add pytest config
