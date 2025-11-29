@@ -36,3 +36,4 @@ Chronological log of work activity.
 - 2025-11-28 17:00 — chore: version 0.0.1
 - 2025-11-28 17:19 — chore: add pytest config
 - 2025-11-29 12:09 — chore: add CODEOWNERS
+- 2025-11-29 14:29 — chore: add pytest config
