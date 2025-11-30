@@ -38,3 +38,4 @@ Chronological log of work activity.
 - 2025-11-29 12:09 — chore: add CODEOWNERS
 - 2025-11-29 14:29 — chore: add pytest config
 - 2025-11-30 09:55 — add MANIFEST.in
+- 2025-11-30 15:51 — docs: README stub
