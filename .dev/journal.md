@@ -39,3 +39,4 @@ Chronological log of work activity.
 - 2025-11-29 14:29 — chore: add pytest config
 - 2025-11-30 09:55 — add MANIFEST.in
 - 2025-11-30 15:51 — docs: README stub
+- 2025-12-01 09:08 — docs: note breaking change
