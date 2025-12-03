@@ -44,3 +44,4 @@ Chronological log of work activity.
 - 2025-12-02 11:11 — feat: public factory
 - 2025-12-03 14:39 — chore: version bump
 - 2025-12-03 15:41 — tighten signatures
+- 2025-12-03 15:42 — refactor: use dataclass for state
