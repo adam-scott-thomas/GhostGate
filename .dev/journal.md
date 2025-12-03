@@ -45,3 +45,4 @@ Chronological log of work activity.
 - 2025-12-03 14:39 — chore: version bump
 - 2025-12-03 15:41 — tighten signatures
 - 2025-12-03 15:42 — refactor: use dataclass for state
+- 2025-12-03 17:13 — chore: update dependencies
