@@ -49,3 +49,4 @@ Chronological log of work activity.
 - 2025-12-04 11:25 — fix: handle empty config
 - 2025-12-05 10:24 — chore: update dependencies
 - 2025-12-05 11:56 — tighten signatures
+- 2025-12-06 11:33 — feat: public factory
