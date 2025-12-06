@@ -50,3 +50,4 @@ Chronological log of work activity.
 - 2025-12-05 10:24 — chore: update dependencies
 - 2025-12-05 11:56 — tighten signatures
 - 2025-12-06 11:33 — feat: public factory
+- 2025-12-06 12:41 — chore: update dependencies
