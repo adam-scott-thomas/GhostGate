@@ -52,3 +52,4 @@ Chronological log of work activity.
 - 2025-12-06 11:33 — feat: public factory
 - 2025-12-06 12:41 — chore: update dependencies
 - 2025-12-06 16:34 — chore: version bump
+- 2025-12-06 17:08 — implement initial primitive
