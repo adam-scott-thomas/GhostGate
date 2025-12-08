@@ -55,3 +55,4 @@ Chronological log of work activity.
 - 2025-12-06 17:08 — implement initial primitive
 - 2025-12-07 13:01 — docs: note breaking change
 - 2025-12-08 13:02 — fix: import order
+- 2025-12-08 14:40 — fix: import order
