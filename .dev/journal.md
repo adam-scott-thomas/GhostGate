@@ -57,3 +57,4 @@ Chronological log of work activity.
 - 2025-12-08 13:02 — fix: import order
 - 2025-12-08 14:40 — fix: import order
 - 2025-12-08 15:03 — refactor: extract validation helper
+- 2025-12-08 15:49 — chore: update dependencies
