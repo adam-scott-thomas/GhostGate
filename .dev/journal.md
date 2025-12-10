@@ -60,3 +60,4 @@ Chronological log of work activity.
 - 2025-12-08 15:49 — chore: update dependencies
 - 2025-12-09 10:04 — fix lint warnings
 - 2025-12-09 10:51 — refactor: split module
+- 2025-12-10 16:50 — docs: note breaking change
