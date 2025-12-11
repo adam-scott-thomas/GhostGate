@@ -62,3 +62,4 @@ Chronological log of work activity.
 - 2025-12-09 10:51 — refactor: split module
 - 2025-12-10 16:50 — docs: note breaking change
 - 2025-12-11 11:29 — feat: add config loader
+- 2025-12-11 13:30 — refactor: split module
