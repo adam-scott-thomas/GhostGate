@@ -66,3 +66,4 @@ Chronological log of work activity.
 - 2025-12-11 18:20 — docs: elaborate module layout
 - 2025-12-12 09:43 — feat: public factory
 - 2025-12-12 11:45 — add first unit test
+- 2025-12-14 10:38 — chore: version bump
