@@ -70,3 +70,4 @@ Chronological log of work activity.
 - 2025-12-14 11:26 — docs: note breaking change
 - 2025-12-14 12:55 — docs: elaborate module layout
 - 2025-12-14 14:55 — refactor: split module
+- 2025-12-15 12:21 — feat: add logging helper
