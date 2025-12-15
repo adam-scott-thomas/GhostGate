@@ -72,3 +72,4 @@ Chronological log of work activity.
 - 2025-12-14 14:55 — refactor: split module
 - 2025-12-15 12:21 — feat: add logging helper
 - 2025-12-15 13:47 — refactor: use dataclass for state
+- 2025-12-15 15:14 — refactor: use dataclass for state
