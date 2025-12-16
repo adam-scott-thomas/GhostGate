@@ -74,3 +74,4 @@ Chronological log of work activity.
 - 2025-12-15 13:47 — refactor: use dataclass for state
 - 2025-12-15 15:14 — refactor: use dataclass for state
 - 2025-12-15 15:37 — refactor: split module
+- 2025-12-16 14:28 — feat: public factory
