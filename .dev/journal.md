@@ -80,3 +80,4 @@ Chronological log of work activity.
 - 2025-12-17 09:21 — wip: core interface
 - 2025-12-17 09:36 — test: add test for edge case
 - 2025-12-17 11:36 — docs: note breaking change
+- 2025-12-17 14:34 — wip: exception hierarchy
