@@ -84,3 +84,4 @@ Chronological log of work activity.
 - 2025-12-18 11:14 — wip: exception hierarchy
 - 2025-12-18 11:37 — test: config loader basic cases
 - 2025-12-19 12:00 — test: config loader basic cases
+- 2025-12-19 12:57 — fix: None input case
