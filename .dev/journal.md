@@ -89,3 +89,4 @@ Chronological log of work activity.
 - 2025-12-21 13:33 — fix lint warnings
 - 2025-12-22 09:46 — fix: None input case
 - 2025-12-22 12:50 — add first unit test
+- 2025-12-22 14:00 — add type hints
