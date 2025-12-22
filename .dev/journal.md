@@ -87,3 +87,4 @@ Chronological log of work activity.
 - 2025-12-19 12:57 — fix: None input case
 - 2025-12-20 16:19 — fix: handle empty config
 - 2025-12-21 13:33 — fix lint warnings
+- 2025-12-22 09:46 — fix: None input case
