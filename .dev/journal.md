@@ -91,3 +91,4 @@ Chronological log of work activity.
 - 2025-12-22 12:50 — add first unit test
 - 2025-12-22 14:00 — add type hints
 - 2025-12-22 17:18 — fix: handle empty config
+- 2025-12-23 12:10 — refactor: use dataclass for state
