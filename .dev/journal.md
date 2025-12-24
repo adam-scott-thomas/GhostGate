@@ -94,3 +94,4 @@ Chronological log of work activity.
 - 2025-12-23 12:10 — refactor: use dataclass for state
 - 2025-12-23 17:24 — implement initial primitive
 - 2025-12-24 10:34 — docs: add quickstart
+- 2025-12-24 12:49 — chore: rename private helper
