@@ -98,3 +98,4 @@ Chronological log of work activity.
 - 2025-12-24 18:04 — chore: version bump
 - 2025-12-25 11:20 — wip: core interface
 - 2025-12-26 16:03 — test: add test for edge case
+- 2025-12-27 09:30 — add example usage
