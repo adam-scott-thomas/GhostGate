@@ -100,3 +100,4 @@ Chronological log of work activity.
 - 2025-12-26 16:03 — test: add test for edge case
 - 2025-12-27 09:30 — add example usage
 - 2025-12-27 16:37 — feat: add logging helper
+- 2025-12-28 10:42 — add example usage
