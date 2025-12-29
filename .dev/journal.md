@@ -103,3 +103,4 @@ Chronological log of work activity.
 - 2025-12-28 10:42 — add example usage
 - 2025-12-28 12:26 — wip: exception hierarchy
 - 2025-12-29 10:56 — add example usage
+- 2025-12-29 13:32 — add example usage
