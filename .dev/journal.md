@@ -106,3 +106,4 @@ Chronological log of work activity.
 - 2025-12-29 13:32 — add example usage
 - 2025-12-29 15:22 — test: config loader basic cases
 - 2025-12-29 18:36 — fix: import order
+- 2025-12-30 10:15 — feat: add logging helper
