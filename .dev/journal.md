@@ -108,3 +108,4 @@ Chronological log of work activity.
 - 2025-12-29 18:36 — fix: import order
 - 2025-12-30 10:15 — feat: add logging helper
 - 2025-12-30 12:02 — add first unit test
+- 2025-12-30 17:20 — chore: rename private helper
