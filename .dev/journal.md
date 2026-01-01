@@ -111,3 +111,4 @@ Chronological log of work activity.
 - 2025-12-30 17:20 — chore: rename private helper
 - 2025-12-31 11:56 — docs: elaborate module layout
 - 2026-01-01 13:56 — docs: update README examples
+- 2026-01-01 17:01 — feat: add entry point
