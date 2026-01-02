@@ -114,3 +114,4 @@ Chronological log of work activity.
 - 2026-01-01 17:01 — feat: add entry point
 - 2026-01-02 14:35 — test: integration with mock backend
 - 2026-01-02 15:45 — feat: expose public API
+- 2026-01-02 17:06 — feat: add CLI arg parser
