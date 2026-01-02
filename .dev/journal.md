@@ -112,3 +112,4 @@ Chronological log of work activity.
 - 2025-12-31 11:56 — docs: elaborate module layout
 - 2026-01-01 13:56 — docs: update README examples
 - 2026-01-01 17:01 — feat: add entry point
+- 2026-01-02 14:35 — test: integration with mock backend
