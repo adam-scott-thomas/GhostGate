@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GhostGate — Stop bad transactions before they hit the chain</title>
+<meta name="description" content="GhostGate is the circuit breaker between your autonomous bot and a drained wallet. Deterministic policy chain, kill switch, audit trail. Wrap your wallet in 3 lines." />
+<meta property="og:title" content="GhostGate — Wrap your wallet in 3 lines." />
+<meta property="og:description" content="The circuit breaker between your autonomous bot and a drained wallet." />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  pre, code { font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace; }
+  .mono { font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace; }
+  .grain { background-image: radial-gradient(#111 1px, transparent 1px); background-size: 24px 24px; }
+</style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+<!-- NAV -->
+<nav class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+  <a href="/" class="mono text-lg tracking-tight">
+    <span class="text-emerald-400">ghost</span><span class="text-neutral-100">gate</span>
+    <span class="text-neutral-500 text-sm ml-1">· gate.report</span>
+  </a>
+  <div class="flex items-center gap-6 text-sm text-neutral-400">
+    <a href="#how" class="hover:text-neutral-100">How</a>
+    <a href="#demo" class="hover:text-neutral-100">Demo</a>
+    <a href="#pricing" class="hover:text-neutral-100">Pricing</a>
+    <a href="#install" class="hover:text-neutral-100">Install</a>
+    <a href="https://github.com/adam-scott-thomas/GhostGate" class="hover:text-neutral-100">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="max-w-5xl mx-auto px-6 pt-16 pb-24">
+  <p class="mono text-emerald-400 text-sm mb-6">/* enforcement layer for autonomous wallets */</p>
+  <h1 class="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+    Wrap your wallet in 3 lines.<br/>
+    <span class="text-emerald-400">GhostGate stops bad transactions.</span>
+  </h1>
+  <p class="mt-8 text-xl text-neutral-400 max-w-2xl leading-relaxed">
+    GhostGate is the circuit breaker between your autonomous bot and a drained wallet.
+    Deterministic policy chain, kill switch, full audit trail. No AI in the critical path.
+    No cloud. No latency.
+  </p>
+  <div class="mt-10 flex flex-wrap gap-4">
+    <a href="#demo" class="px-6 py-3 bg-emerald-400 text-neutral-950 font-semibold rounded hover:bg-emerald-300 transition">
+      Watch the 30-second demo
+    </a>
+    <a href="#install" class="px-6 py-3 border border-neutral-700 rounded hover:border-neutral-400 transition">
+      Install from source
+    </a>
+  </div>
+  <p class="mt-6 text-sm text-neutral-500 mono">23 tests · 70ms · 0 runtime deps · Apache-2.0</p>
+</header>
+
+<!-- PROBLEM -->
+<section class="border-y border-neutral-800 bg-neutral-900/50">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold mb-4">Autonomous bots fail in the same four ways.</h2>
+    <p class="text-neutral-400 mb-10 max-w-2xl">
+      Every drained wallet you've read about on Twitter was a control problem, not a model problem.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded border border-neutral-800 bg-neutral-950">
+        <div class="text-emerald-400 mono text-xs mb-2">FAILURE MODE #1</div>
+        <h3 class="font-semibold text-lg mb-2">Hallucinated swap</h3>
+        <p class="text-neutral-400">Model outputs a trade against a scam token. Signer doesn't care. Transaction lands.</p>
+      </div>
+      <div class="p-6 rounded border border-neutral-800 bg-neutral-950">
+        <div class="text-emerald-400 mono text-xs mb-2">FAILURE MODE #2</div>
+        <h3 class="font-semibold text-lg mb-2">Prompt injection → unlimited approval</h3>
+        <p class="text-neutral-400">Poisoned tweet in the bot's context window. One <span class="mono text-neutral-200">approve(max_uint256)</span> call to a malicious contract. Done.</p>
+      </div>
+      <div class="p-6 rounded border border-neutral-800 bg-neutral-950">
+        <div class="text-emerald-400 mono text-xs mb-2">FAILURE MODE #3</div>
+        <h3 class="font-semibold text-lg mb-2">Retry loop during gas spike</h3>
+        <p class="text-neutral-400">Error handler fires 400 retries in 30 seconds. Wallet hits zero before anyone notices the alert.</p>
+      </div>
+      <div class="p-6 rounded border border-neutral-800 bg-neutral-950">
+        <div class="text-emerald-400 mono text-xs mb-2">FAILURE MODE #4</div>
+        <h3 class="font-semibold text-lg mb-2">Flash crash panic sell</h3>
+        <p class="text-neutral-400">Model sees red candles, sells the bottom. Nothing told it to wait. Nothing could.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="max-w-5xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-bold mb-4">One funnel. Five steps. No signature without a pass.</h2>
+  <p class="text-neutral-400 mb-12 max-w-2xl">
+    Every transaction walks the same path. The signer is unreachable from any code path that skipped the chain.
+  </p>
+
+  <div class="grid md:grid-cols-5 gap-4 text-sm">
+    <div class="p-4 rounded border border-neutral-800">
+      <div class="text-emerald-400 mono text-xs mb-2">01 · KILL SWITCH</div>
+      <p class="text-neutral-300">Is the wallet frozen? If yes, reject immediately.</p>
+    </div>
+    <div class="p-4 rounded border border-neutral-800">
+      <div class="text-emerald-400 mono text-xs mb-2">02 · POLICY CHAIN</div>
+      <p class="text-neutral-300">Walk the rules. First non-approve wins.</p>
+    </div>
+    <div class="p-4 rounded border border-neutral-800">
+      <div class="text-emerald-400 mono text-xs mb-2">03 · AUDIT</div>
+      <p class="text-neutral-300">Record the decision. Approve or not.</p>
+    </div>
+    <div class="p-4 rounded border border-neutral-800">
+      <div class="text-emerald-400 mono text-xs mb-2">04 · SIGN</div>
+      <p class="text-neutral-300">Only if step 2 returned approve.</p>
+    </div>
+    <div class="p-4 rounded border border-neutral-800">
+      <div class="text-emerald-400 mono text-xs mb-2">05 · BROADCAST</div>
+      <p class="text-neutral-300">Record the send into velocity state.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO CODE -->
+<section id="demo" class="border-y border-neutral-800 bg-neutral-900/50">
+  <div class="max-w-5xl mx-auto px-6 py-24">
+    <h2 class="text-3xl font-bold mb-4">The whole API, in one screen.</h2>
+    <p class="text-neutral-400 mb-8 max-w-2xl">
+      Replace <span class="mono text-neutral-200">MockSigner</span> and <span class="mono text-neutral-200">MockRPC</span> with
+      <span class="mono text-neutral-200">eth_account</span> and <span class="mono text-neutral-200">web3.py</span> when you're ready. Gate doesn't care.
+    </p>
+
+<pre class="overflow-x-auto text-sm bg-neutral-950 border border-neutral-800 rounded p-6 leading-relaxed"><code><span class="text-neutral-500">from</span> <span class="text-emerald-400">ghostgate</span> <span class="text-neutral-500">import</span> (
+    GatedWallet, MockSigner, MockRPC, policies,
+    TxDenied, WalletFrozen,
+)
+
+UNISWAP = <span class="text-amber-300">"0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"</span>
+SCAM    = <span class="text-amber-300">"0xDeadBeef00000000000000000000000000000000"</span>
+
+wallet = GatedWallet(
+    signer=MockSigner(),
+    rpc=MockRPC(),
+    policies=[
+        policies.contract_denylist({SCAM}),
+        policies.contract_allowlist({UNISWAP}),
+        policies.max_value_per_tx(max_wei=10**17),        <span class="text-neutral-500"># 0.1 ETH hard cap</span>
+        policies.rate_limit(max_sends=5, window_seconds=60),
+        policies.spend_cap(max_wei=10**18, window_seconds=3600),
+    ],
+)
+
+<span class="text-neutral-500"># Normal bot behavior — fine.</span>
+wallet.send(UNISWAP, value_wei=10**16)
+
+<span class="text-neutral-500"># Bot gets prompt-injected and tries to drain.</span>
+<span class="text-neutral-500">try</span>:
+    wallet.send(SCAM, value_wei=10**18)
+<span class="text-neutral-500">except</span> WalletFrozen <span class="text-neutral-500">as</span> e:
+    <span class="text-neutral-500">print</span>(<span class="text-amber-300">"stopped:"</span>, e)
+    <span class="text-neutral-500"># -> stopped: attempted send to denylisted address 0xDeadBeef...</span>
+
+<span class="text-neutral-500"># Wallet is now locked. Every subsequent send raises WalletFrozen
+# until a human calls wallet.unfreeze().</span></code></pre>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4 text-sm">
+      <div class="p-4 border border-emerald-400/30 rounded bg-emerald-400/5">
+        <div class="text-emerald-400 mono text-xs mb-1">APPROVE</div>
+        <p class="text-neutral-300">All rules passed. Sign and broadcast.</p>
+      </div>
+      <div class="p-4 border border-amber-400/30 rounded bg-amber-400/5">
+        <div class="text-amber-400 mono text-xs mb-1">DENY</div>
+        <p class="text-neutral-300">This transaction blocked. Wallet stays usable.</p>
+      </div>
+      <div class="p-4 border border-rose-400/30 rounded bg-rose-400/5">
+        <div class="text-rose-400 mono text-xs mb-1">FREEZE</div>
+        <p class="text-neutral-300">All future sends blocked until a human unfreezes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="max-w-5xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-bold mb-4">One price. One seat. One year.</h2>
+  <p class="text-neutral-400 mb-12 max-w-2xl">
+    No subscription trap. No metered tokens. The license is a signed blob you verify offline.
+    Your wallet never phones home.
+  </p>
+
+  <div class="max-w-md p-8 rounded border border-emerald-400 bg-emerald-400/5">
+    <div class="mono text-emerald-400 text-sm mb-2">SOLO</div>
+    <div class="text-5xl font-bold mb-2">$79<span class="text-xl text-neutral-500"> / wallet / year</span></div>
+    <ul class="mt-6 space-y-2 text-neutral-300">
+      <li>✓ All v1 policies (value cap, allow/denylist, rate limit, spend cap)</li>
+      <li>✓ Deterministic — no AI in the critical path</li>
+      <li>✓ Offline license, no SaaS dependency</li>
+      <li>✓ Full audit trail, JSON-dumpable</li>
+      <li>✓ Apache-2.0 source, no vendor lock-in</li>
+      <li>✓ Works with any <span class="mono">eth_account</span>-compatible signer</li>
+    </ul>
+    <a href="mailto:hello@gate.report?subject=Gate%20early%20access" class="mt-8 block text-center px-6 py-3 bg-emerald-400 text-neutral-950 font-semibold rounded hover:bg-emerald-300 transition">
+      Request early access
+    </a>
+    <p class="mt-4 text-xs text-neutral-500 text-center">
+      v0.2 is free while we validate. Early-access users grandfathered at $49/yr.
+    </p>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install" class="border-y border-neutral-800 bg-neutral-900/50">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold mb-4">Install from source.</h2>
+    <p class="text-neutral-400 mb-8 max-w-2xl">
+      Not on PyPI yet. Clone the repo and install the core or the
+      <span class="mono text-neutral-200">[web3]</span> extras — your choice.
+    </p>
+<pre class="overflow-x-auto text-sm bg-neutral-950 border border-neutral-800 rounded p-6 leading-relaxed"><code><span class="text-neutral-500"># core only -- zero runtime deps</span>
+git clone https://github.com/adam-scott-thomas/GhostGate.git
+cd GhostGate &amp;&amp; pip install -e .
+
+<span class="text-neutral-500"># or with the real eth_account + web3.py adapters</span>
+pip install -e <span class="text-amber-300">'.[web3]'</span>
+
+<span class="text-neutral-500"># run the broken-bot demo</span>
+python -m ghostgate.examples.broken_bot</code></pre>
+  </div>
+</section>
+
+<!-- NOT -->
+<section class="border-y border-neutral-800 bg-neutral-900/50">
+  <div class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold mb-8">What GhostGate is NOT.</h2>
+    <div class="grid md:grid-cols-2 gap-4 text-neutral-300">
+      <div class="flex gap-3">
+        <span class="text-rose-400 mono">×</span>
+        <div>
+          <span class="font-semibold text-neutral-100">Not a wallet.</span>
+          It wraps one. Your signer, your keys, your problem.
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-rose-400 mono">×</span>
+        <div>
+          <span class="font-semibold text-neutral-100">Not a bot.</span>
+          It gates one. You bring the strategy, Gate enforces the rails.
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-rose-400 mono">×</span>
+        <div>
+          <span class="font-semibold text-neutral-100">Not an AI layer.</span>
+          Policies are deterministic on purpose. No model in the critical path, ever.
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <span class="text-rose-400 mono">×</span>
+        <div>
+          <span class="font-semibold text-neutral-100">Not a dashboard product.</span>
+          The audit trail is a stream, not a pretty screen. Pipe it anywhere.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-5xl mx-auto px-6 py-24 text-center">
+  <h2 class="text-4xl font-bold mb-4">Gate doesn't decide what to do.</h2>
+  <p class="text-4xl font-bold text-emerald-400 mb-10">It decides what is allowed to happen.</p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="https://github.com/adam-scott-thomas/GhostGate" class="px-8 py-4 bg-emerald-400 text-neutral-950 font-semibold rounded hover:bg-emerald-300 transition">
+      Star on GitHub
+    </a>
+    <a href="#install" class="px-8 py-4 border border-neutral-700 rounded hover:border-neutral-400 transition">
+      Install from source
+    </a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-neutral-500">
+    <div class="mono">ghostgate · gate.report · v0.2</div>
+    <div>Apache-2.0</div>
+  </div>
+</footer>
+
+</body>
+</html>
