@@ -1,20 +1,35 @@
 # GhostGate — [gate.report](https://gate.report)
 
+[![status](https://img.shields.io/badge/status-v0.2-blue)]()
+[![tests](https://img.shields.io/badge/tests-23%2F24_passing-brightgreen)]()
+[![python](https://img.shields.io/badge/python-3.10%2B-blue)]()
+[![license](https://img.shields.io/badge/license-Apache_2.0-green)]()
+[![deps](https://img.shields.io/badge/runtime_deps-zero-green)]()
+
 > **Gate doesn't decide what to do. It decides what is allowed to happen.**
 >
 > *Wrap your wallet in 3 lines. GhostGate stops bad transactions.*
 
-**GhostGate** is the enforcement layer between a bot's intent and an on-chain
-transaction. It is the circuit breaker that sits between your autonomous
-trading / minting / DeFi agent and a drained wallet.
+**GhostGate** is the deterministic enforcement layer between a bot's intent
+and an on-chain transaction. It is the circuit breaker that sits between
+your autonomous trading / minting / DeFi agent and a drained wallet.
 
-**Status**: v0.2 — pure-Python core, offline, zero runtime deps, real
-`eth_account` + `web3.py` adapters via `pip install 'ghostgate[web3]'`.
-23/24 tests green (1 auto-skipped when `eth_account` isn't installed).
+## Who this is for
 
-v0.2 is **free while we validate demand**. Paid v1.0 ships a signed offline
+- You run an **autonomous agent** that signs transactions (DeFi, minting, NFT floors, arb bots)
+- You have **`eth_account` + `web3.py`** in production and a private key in memory somewhere scary
+- You've read about a prompt-injection wallet drain and thought *"how would I prove that can't happen to me"*
+- You want a **deterministic, non-LLM control layer** — no model in the critical path, ever
+
+## Status
+
+v0.2 — pure-Python core, offline, zero runtime deps. Real `eth_account` +
+`web3.py` adapters via `pip install 'ghostgate[web3]'`. **23/24 tests green**
+(1 auto-skipped when `eth_account` isn't installed).
+
+v0.2 is **free while we validate demand.** Paid v1.0 ships a signed offline
 license at **$79 / wallet / year** once enough operators tell us they'd
-actually pay for it.
+actually pay for it. No phone-home, no latency, no cloud dependency — ever.
 
 ## Why this exists
 
@@ -153,7 +168,17 @@ wallet.audit.denied()
 wallet.audit.frozen()
 ```
 
-Records are JSON-serializable via `entry.to_dict()` for export.
+Sample output after the 30-second example above:
+
+```
+approved 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D  all policies passed
+frozen   0xDeadBeef00000000000000000000000000000000  attempted send to denylisted address
+frozen   0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D  wallet frozen at 2026-04-22T04:57:10Z
+```
+
+Records are JSON-serializable via `entry.to_dict()` for export — stream them to
+your SIEM, append to SQLite, or publish to a hash-chained audit sink like
+`gate-compliance` / `ghostseal`.
 
 ## Install
 
@@ -231,12 +256,15 @@ Solana jumps the queue.
 
 ## How it fits the Gate ecosystem
 
-GhostGate is a Layer-2 package in the [Maelstrom Gate](../go_bro_bro_go/)
-ecosystem. It re-uses the same mental model as the core — intents flow
-through a deterministic policy chain with an audit trail — but stays
-self-contained: zero hard deps on `gate-sdk`, `gate-policy`, or
-`gate-compliance`. The audit sink and policy loader are protocols, so
-those packages can plug in without touching the wallet itself.
+GhostGate is the wallet-protection deployment of the **Maelstrom Gate**
+governance standard — the same mental model applied to a crypto signer:
+intents flow through a deterministic policy chain with an audit trail.
+
+GhostGate stays self-contained with **zero hard deps** on any other Gate
+package. The audit sink and policy loader are protocols, so `gate-policy`,
+`gate-compliance`, and friends can plug in without touching the wallet
+itself. You can run GhostGate stand-alone forever, or compose it into a
+larger agent-governance stack when you're ready.
 
 ## What this is NOT
 
@@ -248,6 +276,19 @@ those packages can plug in without touching the wallet itself.
   trail, not the point)
 
 It is one thing: **a control layer that decides what is allowed to happen.**
+
+## Feedback
+
+v0.2 is where we find out whether anyone wants to pay $79/wallet/year for
+this. Every decision in the roadmap is driven by what real operators ask for.
+
+- **Running an autonomous wallet bot?** Open an issue telling us which
+  attack vector keeps you up at night — that's what ships next.
+- **Found a policy you'd want that isn't there?** Issue + code sketch
+  welcome. Custom policies are just callables returning a `Decision` — PRs
+  with good tests get merged fast.
+- **Want a paid tier?** Say so loudly. The license enforcement doesn't
+  ship until enough operators do.
 
 ## License
 
