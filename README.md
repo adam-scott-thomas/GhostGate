@@ -1,5 +1,7 @@
 # GhostGate — [gate.report](https://gate.report)
 
+**English** · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
+
 [![status](https://img.shields.io/badge/status-v0.2-blue)]()
 [![tests](https://img.shields.io/badge/tests-23%2F24_passing-brightgreen)]()
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)]()
