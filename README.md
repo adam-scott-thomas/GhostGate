@@ -1,4 +1,4 @@
-# GhostGate — [gate.report](https://gate.report)
+# GhostWallet — [gate.report](https://gate.report)
 
 **English** · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 
@@ -10,9 +10,9 @@
 
 > **Gate doesn't decide what to do. It decides what is allowed to happen.**
 >
-> *Wrap your wallet in 3 lines. GhostGate stops bad transactions.*
+> *Wrap your wallet in 3 lines. GhostWallet stops bad transactions.*
 
-**GhostGate** is the deterministic enforcement layer between a bot's intent
+**GhostWallet** is the deterministic enforcement layer between a bot's intent
 and an on-chain transaction. It is the circuit breaker that sits between
 your autonomous trading / minting / DeFi agent and a drained wallet.
 
@@ -49,7 +49,7 @@ prompt your way out of it. The fix is a deterministic layer between the
 agent's intent and the signer that says "no" when the intent breaks the
 rules — and freezes the whole wallet when things look actively compromised.
 
-That's GhostGate.
+That's GhostWallet.
 
 ## What it does
 
@@ -258,14 +258,14 @@ Solana jumps the queue.
 
 ## How it fits the Gate ecosystem
 
-GhostGate is the wallet-protection deployment of the **Maelstrom Gate**
+GhostWallet is the wallet-protection deployment of the **Maelstrom Gate**
 governance standard — the same mental model applied to a crypto signer:
 intents flow through a deterministic policy chain with an audit trail.
 
-GhostGate stays self-contained with **zero hard deps** on any other Gate
+GhostWallet stays self-contained with **zero hard deps** on any other Gate
 package. The audit sink and policy loader are protocols, so `gate-policy`,
 `gate-compliance`, and friends can plug in without touching the wallet
-itself. You can run GhostGate stand-alone forever, or compose it into a
+itself. You can run GhostWallet stand-alone forever, or compose it into a
 larger agent-governance stack when you're ready.
 
 ## What this is NOT

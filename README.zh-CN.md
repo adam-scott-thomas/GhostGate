@@ -1,4 +1,4 @@
-# GhostGate — [gate.report](https://gate.report)
+# GhostWallet — [gate.report](https://gate.report)
 
 [English](README.md) · **中文** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 
@@ -10,9 +10,9 @@
 
 > **Gate 不决定该做什么。它决定什么被允许发生。**
 >
-> *用三行代码包裹你的钱包。GhostGate 阻止不良交易。*
+> *用三行代码包裹你的钱包。GhostWallet 阻止不良交易。*
 
-**GhostGate** 是位于机器人意图与链上交易之间的确定性执行层。它是坐镇于你的自主交易 / 铸造 / DeFi 代理与被掏空的钱包之间的熔断机制。
+**GhostWallet** 是位于机器人意图与链上交易之间的确定性执行层。它是坐镇于你的自主交易 / 铸造 / DeFi 代理与被掏空的钱包之间的熔断机制。
 
 ## 适用对象
 
@@ -38,7 +38,7 @@ v0.2 —— 纯 Python 核心、离线、零运行时依赖。通过 `pip instal
 
 每一个都是*控制*问题，而不是模型问题。你无法通过提示摆脱它。修复方法是在代理的意图与签名器之间加入一个确定性层，当意图违反规则时说"不" —— 并在情况看起来确实受到威胁时冻结整个钱包。
 
-这就是 GhostGate。
+这就是 GhostWallet。
 
 ## 它做什么
 
@@ -233,9 +233,9 @@ wallet.send(UNISWAP, value_wei=10**16)  # routes through policy chain
 
 ## 它如何融入 Gate 生态
 
-GhostGate 是 **Maelstrom Gate** 治理标准的钱包保护部署 —— 将相同的心智模型应用于加密签名器：意图流经一个带审计日志的确定性策略链。
+GhostWallet 是 **Maelstrom Gate** 治理标准的钱包保护部署 —— 将相同的心智模型应用于加密签名器：意图流经一个带审计日志的确定性策略链。
 
-GhostGate 保持自包含，对任何其他 Gate 包**零硬依赖**。审计接收端和策略加载器都是协议，因此 `gate-policy`、`gate-compliance` 及其伙伴可以在不触及钱包本身的情况下插入。你可以永远独立运行 GhostGate，或者在准备就绪时将其组合到更大的代理治理栈中。
+GhostWallet 保持自包含，对任何其他 Gate 包**零硬依赖**。审计接收端和策略加载器都是协议，因此 `gate-policy`、`gate-compliance` 及其伙伴可以在不触及钱包本身的情况下插入。你可以永远独立运行 GhostWallet，或者在准备就绪时将其组合到更大的代理治理栈中。
 
 ## 这不是什么
 

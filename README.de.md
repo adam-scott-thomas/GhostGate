@@ -1,4 +1,4 @@
-# GhostGate — [gate.report](https://gate.report)
+# GhostWallet — [gate.report](https://gate.report)
 
 [English](README.md) · [中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · **Deutsch**
 
@@ -10,9 +10,9 @@
 
 > **Gate entscheidet nicht, was zu tun ist. Es entscheidet, was geschehen darf.**
 >
-> *Wickle deine Wallet in 3 Zeilen ein. GhostGate stoppt schlechte Transaktionen.*
+> *Wickle deine Wallet in 3 Zeilen ein. GhostWallet stoppt schlechte Transaktionen.*
 
-**GhostGate** ist die deterministische Durchsetzungsschicht zwischen der Absicht eines Bots und einer On-Chain-Transaktion. Es ist der Circuit Breaker zwischen deinem autonomen Trading- / Minting- / DeFi-Agenten und einer leergeräumten Wallet.
+**GhostWallet** ist die deterministische Durchsetzungsschicht zwischen der Absicht eines Bots und einer On-Chain-Transaktion. Es ist der Circuit Breaker zwischen deinem autonomen Trading- / Minting- / DeFi-Agenten und einer leergeräumten Wallet.
 
 ## Für wen das ist
 
@@ -38,7 +38,7 @@ Autonome Wallet-Bots fallen jedes Mal auf dieselben paar Arten aus:
 
 Jedes einzelne davon ist ein *Kontroll*-Problem, kein Modell-Problem. Man kann sich nicht herausprompten. Die Lösung ist eine deterministische Schicht zwischen der Absicht des Agenten und dem Signer, die „nein" sagt, wenn die Absicht die Regeln bricht — und die gesamte Wallet einfriert, wenn die Dinge aktiv kompromittiert aussehen.
 
-Das ist GhostGate.
+Das ist GhostWallet.
 
 ## Was es macht
 
@@ -233,9 +233,9 @@ Alles in der Roadmap unterliegt echtem Nutzer-Feedback. Wenn niemand Calldata-Pa
 
 ## Wie es ins Gate-Ökosystem passt
 
-GhostGate ist die Wallet-Schutz-Deployment des **Maelstrom Gate**-Governance-Standards — dasselbe mentale Modell, angewandt auf einen Krypto-Signer: Absichten fließen durch eine deterministische Policy-Chain mit Audit-Trail.
+GhostWallet ist die Wallet-Schutz-Deployment des **Maelstrom Gate**-Governance-Standards — dasselbe mentale Modell, angewandt auf einen Krypto-Signer: Absichten fließen durch eine deterministische Policy-Chain mit Audit-Trail.
 
-GhostGate bleibt eigenständig mit **null harten Abhängigkeiten** von anderen Gate-Paketen. Die Audit-Senke und der Policy-Loader sind Protokolle, sodass `gate-policy`, `gate-compliance` und Freunde sich einstecken lassen, ohne die Wallet selbst zu berühren. Du kannst GhostGate für immer standalone fahren oder es in einen größeren Agent-Governance-Stack einbauen, wenn du bereit bist.
+GhostWallet bleibt eigenständig mit **null harten Abhängigkeiten** von anderen Gate-Paketen. Die Audit-Senke und der Policy-Loader sind Protokolle, sodass `gate-policy`, `gate-compliance` und Freunde sich einstecken lassen, ohne die Wallet selbst zu berühren. Du kannst GhostWallet für immer standalone fahren oder es in einen größeren Agent-Governance-Stack einbauen, wenn du bereit bist.
 
 ## Was das NICHT ist
 
